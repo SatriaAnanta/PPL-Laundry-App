@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::post('laundry', ['as' => 'laundry.index', 'uses' => 'App\Http\Controllers\LaundryController@searchLaundry']);
+Route::get('laundry', ['as' => 'laundry.index', 'uses' => 'App\Http\Controllers\LaundryController@searchLaundry']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
