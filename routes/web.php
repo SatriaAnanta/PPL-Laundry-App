@@ -23,3 +23,8 @@ Route::get('laundry', ['as' => 'laundry.index', 'uses' => 'App\Http\Controllers\
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//route CRUD
+Route::get('/data_laundry','DataLaundryController@index');
+Route::get('/data_laundry/tambah','DataLaundryController@tambah');
+Route::post('/data_laundry/store','DataLaundryController@store');
