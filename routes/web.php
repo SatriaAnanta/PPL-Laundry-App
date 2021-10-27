@@ -25,6 +25,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //route CRUD
-Route::get('/data_laundry','DataLaundryController@index');
-Route::get('/data_laundry/tambah','DataLaundryController@tambah');
-Route::post('/data_laundry/store','DataLaundryController@store');
+Route::get('/data_laundry','App\Http\Controllers\DataLaundryController@index');
+Route::get('/data_laundry/tambah','App\Http\Controllers\DataLaundryController@tambah');
+Route::post('/data_laundry/store','App\Http\Controllers\DataLaundryController@store');
