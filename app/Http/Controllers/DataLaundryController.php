@@ -45,7 +45,7 @@ class DataLaundryController extends Controller
 	public function delete($id)
     {
         DB::table('data_laundry')->where('id', $id)->delete();
-        return back()->withStatus(__('Data Deleted'));
+        return back()->withStatus(__('Data Berhasil Dihapus'));
     }
 
 }
