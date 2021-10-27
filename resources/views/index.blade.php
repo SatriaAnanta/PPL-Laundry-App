@@ -34,9 +34,10 @@
                 <tr>
                     <th>ID</th>
                     <th>Kode</th>
-                    <th>Tanggal</th>
-                    <th>Waktu</th>
+                    <th>Tanggal Transaksi</th>
+                    <th>Waktu Trankaksi</th>
                     <th>Berat(kg)</th>
+                    <th>Total Harga(Rp)</th>
                     <th>Progres</th>
                     <th>Opsi</th>
                 </tr>
@@ -47,7 +48,16 @@
                     <td>{{ $p->tanggal }}</td>
                     <td>{{ $p->waktu }}</td>
                     <td>{{ $p->berat }}</td>
-                    <td>{{ $p->progres }}</td>
+                    <td>{{ $p->total_harga }}</td>
+                    @if($p->progres==0)         
+                        <td>{{ "Belum diproses" }}</td>         
+                    @elseif($p->progres==1)
+                        <td>{{ "Sedang dicuci" }}</td>
+                    @elseif($p->progres==2)
+                        <td>{{ "Sedang dikeringkan" }}</td>
+                    @elseif($p->progres==3)
+                        <td>{{ "Sedang disetrika" }}</td>        
+                    @endif
                     <td>
                         <a class="btn btn-warning btn-sm" href="/data_laundry/edit/{{ $p->id }}">Edit</a>
                         <form action="{{ route('laundry.delete', [$p->id]) }}" method="post" style="display: inline;">

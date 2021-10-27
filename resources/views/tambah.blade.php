@@ -38,11 +38,11 @@
 				<form action="/data_laundry/store" method="post">
 					{{ csrf_field() }}
 					<div class="form-group">
-						<label for="tanggal">Tanggal</label>
+						<label for="tanggal">Tanggal Transaksi</label>
 						<input type="text"  class="form-control" name="tanggal" id="datepicker">
 					</div>
 					<div class="form-group">
-						<label for="waktu">Waktu</label>
+						<label for="waktu">Waktu Transaksi</label>
 						<input type="text" class="form-control" name="waktu" id="timepicker">
 					</div>
 					<div class="form-group">
@@ -53,10 +53,10 @@
 					<div class="form-group">
 						<label for="inputState">Progres</label>
 						<select id="progres" class="form-control" name="progres">
-							<option selected>Choose...</option>
-							<option value="cuci">Cuci</option>
-							<option value="kering">Kering</option>
-							<option value="setrika">Setrika</option>
+							<option selected value="0">Belum diproses</option>
+							<option value="1">Sedang dicuci</option>
+							<option value="2">Sedang dikeringkan</option>
+							<option value="3">Sedang disetrika</option>
 						</select>
 					</div>
 
