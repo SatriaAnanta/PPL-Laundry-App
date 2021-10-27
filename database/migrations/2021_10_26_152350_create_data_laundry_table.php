@@ -19,6 +19,7 @@ class CreateDataLaundryTable extends Migration
             $table->date('tanggal');
             $table->time('waktu', $precision = 0);
             $table->float('berat', 8, 2);
+            $table->float('total_harga', 8, 2);
             $table->integer('progres');
             $table->timestamps();
         });
