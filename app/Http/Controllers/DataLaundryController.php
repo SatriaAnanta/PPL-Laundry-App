@@ -28,18 +28,16 @@ class DataLaundryController extends Controller
 	public function store(Request $request)
 	{
 		$kode = Str::random(5);
-		// insert data ke table pegawai
+		$harga = ($request->berat)*4000;
 		DB::table('data_laundry')->insert([
 			'id' => NULL,
 			'kode' => $kode,
 			'tanggal' => $request->tanggal,
 			'waktu' => $request->waktu,
 			'berat' => $request->berat,
+			'total_harga' => $harga,
 			'progres' => $request->progres
 		]);
-		// alihkan halaman ke halaman pegawai
 		return redirect('/data_laundry');
-	 
 	}
-
 }
