@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Laundry;
 
 class LaundryController extends Controller
 {
@@ -11,7 +11,7 @@ class LaundryController extends Controller
     {
         $results = [];
         $trackingCode= $request->input('trackingCode');
-        $results = User::where('email',$trackingCode)->get();
+        $results = Laundry::where('kode',$trackingCode)->get();
         return view('laundryTracking',['laundry' => $results]);
     }
 }

@@ -209,7 +209,7 @@
             <div class="row justify-content-center">
                 @if ($laundry->count() > 0 )
                     @foreach ($laundry as $result)
-                        <h1>Tracking Laundry {{ $result->email}}</h1>
+                        <h1>Kode Tracking Laundry: {{ $result->kode}}</h1>
                         <div class="container">
                             <div class="timeline">
                                 <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
