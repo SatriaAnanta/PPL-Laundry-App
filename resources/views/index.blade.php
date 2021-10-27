@@ -39,7 +39,13 @@
                     <td>{{ $p->progres }}</td>
                     <td>
                         <a class="btn btn-warning btn-sm" href="/data_laundry/edit/{{ $p->id }}">Edit</a>
-                        <a class="btn btn-danger btn-sm" href="/data_laundry/hapus/{{ $p->id }}">Hapus</a>
+                        <form action="{{ route('laundry.delete', [$p->id]) }}" method="post" style="display: inline;">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm" rel="tooltip" data-original-title="Hapus">
+                                <i class="material-icons">Hapus</i>
+                            </button>
+                        </form> 
                     </td>
                     
                 </tr>

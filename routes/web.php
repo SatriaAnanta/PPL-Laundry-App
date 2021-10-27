@@ -28,3 +28,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/data_laundry','App\Http\Controllers\DataLaundryController@index');
 Route::get('/data_laundry/tambah','App\Http\Controllers\DataLaundryController@tambah');
 Route::post('/data_laundry/store','App\Http\Controllers\DataLaundryController@store');
+Route::delete('/data_laundry/hapus','App\Http\Controllers\DataLaundryController@delete');
+Route::delete('delete/{id}', ['as' => 'laundry.delete', 'uses' => 'App\Http\Controllers\DataLaundryController@delete']);
+
