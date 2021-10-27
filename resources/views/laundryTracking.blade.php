@@ -202,6 +202,7 @@
         </style>
     </head>
     <body>
+    @@@
         <header>
             @include('includes.header')
         </header>
